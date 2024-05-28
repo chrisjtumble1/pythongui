@@ -11,8 +11,16 @@ def create_app():
     label = tk.Label(window, text="Hello, welcome to my Python app!")
     label.pack()
 
+    # Create an entry widget for user input
+    entry = tk.Entry(window)
+    entry.pack()
+
+    # Create a label widget for output
+    output_label = tk.Label(window, text="")
+    output_label.pack()
+
     # Create a button widget
-    button = tk.Button(window, text="Click me!", command=lambda: label.config(text="Button clicked!"))
+    button = tk.Button(window, text="Submit", command=lambda: output_label.config(text="You entered: " + entry.get()))
     button.pack()
 
     # Run the event loop
